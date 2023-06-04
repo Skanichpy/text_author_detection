@@ -15,11 +15,11 @@ def extract_zip_to(zip_path, load_path):
     current_zipfile.close()
         
 
-diseases_path, writes_path = sorted(Path(SOURCE).glob("*"))
-datasets_path = dict(diseases=diseases_path, 
-                     writes=writes_path)
+writes_path = list(Path(SOURCE).glob("*"))[0]
+datasets_path = dict(writes=writes_path)
 
 if LOAD_DIR not in CURDIR:
+     os.mkdir(LOAD_DIR)
      for dataset_name, to_unzip_file_path in datasets_path.items():
 
         if dataset_name == 'writes': 
@@ -42,6 +42,3 @@ if LOAD_DIR not in CURDIR:
                 os.replace(LOAD_DIR / 'writes' / Path("_".join(test_fn)), 
                            LOAD_DIR / 'writes' / 'test' / (test_fn[0] + '.txt'))
             
-        elif dataset_name == 'diseases':
-             extract_zip_to(zip_path=to_unzip_file_path,
-                            load_path=LOAD_DIR / 'diseases')
