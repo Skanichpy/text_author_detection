@@ -1,4 +1,4 @@
-# TIME SERIES FORECASTING
+# TEXT AUTHOR DETECTION
 ## <b> Tech:</b> 
 [![python](https://img.shields.io/badge/Python-black?style=for-the-badge&logo=Python)]()
 [![jupyter](https://img.shields.io/badge/Jupyter-black?style=for-the-badge&logo=Jupyter)]()
